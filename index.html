@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard">
+        <div class="sidebar">
+            <div class="logo">
+                <h1>Traffic Dashboard</h1>
+            </div>
+            <div class="controls">
+                <div class="control-section">
+                    <h3>Map Layers</h3>
+                    <div class="control-item">
+                        <input type="checkbox" id="traffic-layer" checked>
+                        <label for="traffic-layer">Traffic Layer</label>
+                    </div>
+                    <div class="control-item">
+                        <input type="checkbox" id="construction-layer">
+                        <label for="construction-layer">Construction Layer</label>
+                    </div>
+                    <div class="control-item">
+                        <input type="checkbox" id="transit-layer">
+                        <label for="transit-layer">Transit Layer</label>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>Directions</h3>
+                    <div class="direction-inputs">
+                        <div class="direction-input">
+                            <label for="start-location">Start Location</label>
+                            <input type="text" id="start-location" placeholder="Enter start location">
+                        </div>
+                        <div class="direction-input">
+                            <label for="end-location">End Location</label>
+                            <input type="text" id="end-location" placeholder="Enter destination">
+                        </div>
+                        <button id="get-directions" class="btn"><i class="fas fa-route"></i> Get Directions</button>
+                    </div>
+                    <button id="my-location" class="btn"><i class="fas fa-location-dot"></i> Use My Location</button>
+                    <div id="route-info" class="route-info">
+                        <p>Enter locations to get directions.</p>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>Map Style</h3>
+                    <select id="map-style">
+                        <option value="default">Default</option>
+                        <option value="silver">Silver</option>
+                        <option value="night">Night Mode</option>
+                        <option value="retro">Retro</option>
+                        <option value="monochrome">Monochrome</option>
+                        <option value="dark">Dark Mode</option>
+                    </select>
+                </div>
+
+                <div class="control-section">
+                    <h3>Traffic Info</h3>
+                    <div id="traffic-info">
+                        <p>Select an area on the map to view traffic details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-container" id="map"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZCF9pZQsW9B0hecE4cwEMEK6-qQBiBOI&libraries=places&callback=initMap">
+    </script>
+</body>
+</html>
